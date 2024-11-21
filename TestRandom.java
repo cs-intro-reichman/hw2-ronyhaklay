@@ -16,9 +16,7 @@ public  class  TestRandom {
         System.out.println("> 0.5: " + countBiggerThanHalf + " times");
         System.out.println("<= 0.5: " + countLessThanOrEqualHalf + " times");
 
-        if (countBiggerThanHalf == 0 || countLessThanOrEqualHalf == 0) {
-            System.out.println("Ratio: undefined (avoid division by zero)");
-        } else {
+        if (countBiggerThanHalf != 0 && countLessThanOrEqualHalf != 0) {
             double ratio = (double) countBiggerThanHalf / countLessThanOrEqualHalf;
             System.out.println("Ratio: " + ratio);
         }
