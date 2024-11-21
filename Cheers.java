@@ -12,7 +12,7 @@ public class Cheers {
                     if (needAnChars.indexOf(oneChar) >= 0) {
                         System.out.println("Give me an " + oneChar + ": " + oneChar + "!");
                     } else {
-                        System.out.println("Give me  a " + oneChar + ": " + oneChar + "!");
+                        System.out.println("Give me a " + oneChar + ": " + oneChar + "!");
                     }
                 }
 
