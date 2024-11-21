@@ -3,6 +3,7 @@ public  class  TestRandom {
 		int N = Integer.parseInt(args[0]);
         int countBiggerThanHalf = 0;
         int countLessThanOrEqualHalf = 0;
+        double ratio = 0.0;
         double rand; 
 
         for (int i = 0; i < N; i++) {
@@ -16,9 +17,12 @@ public  class  TestRandom {
         System.out.println("> 0.5: " + countBiggerThanHalf + " times");
         System.out.println("<= 0.5: " + countLessThanOrEqualHalf + " times");
 
-        if (countBiggerThanHalf != 0 && countLessThanOrEqualHalf != 0) {
-            double ratio = (double) countBiggerThanHalf / countLessThanOrEqualHalf;
-            System.out.println("Ratio: " + ratio);
-        }
+        if(countLessThanOrEqualHalf!=0 && countBiggerThanHalf!=0){
+			if(countLessThanOrEqualHalf > countBiggerThanHalf)
+				ratio = (double) countBiggerThanHalf/countLessThanOrEqualHalf;
+            else
+				ratio = (double) countLessThanOrEqualHalf/countBiggerThanHalf;
+			System.out.print("Ratio: "+ ratio);
+		}
 	}
 }
