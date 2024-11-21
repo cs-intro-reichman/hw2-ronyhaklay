@@ -18,11 +18,11 @@ public  class  TestRandom {
         System.out.println("<= 0.5: " + countLessThanOrEqualHalf + " times");
 
         if(countLessThanOrEqualHalf!=0 && countBiggerThanHalf!=0){
-			if(countLessThanOrEqualHalf > countBiggerThanHalf)
-				ratio = (double) countBiggerThanHalf/countLessThanOrEqualHalf;
+			if(countLessThanOrEqualHalf < countBiggerThanHalf)
+                ratio = (double) countLessThanOrEqualHalf/countBiggerThanHalf;
             else
-				ratio = (double) countLessThanOrEqualHalf/countBiggerThanHalf;
-			System.out.print("Ratio: "+ ratio);
+                ratio = (double) countBiggerThanHalf/countLessThanOrEqualHalf;
+			System.out.print("Ratio: " + ratio);
 		}
 	}
 }
