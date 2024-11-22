@@ -4,7 +4,7 @@ public class CalcPi {
 		double pai = 0.0;
 		for(int i = 0 ; i < num ; i++)
 		{
-			double numAtI = Math.pow(-1 , 1) / (2.0 * i + 1);
+			double numAtI = Math.pow(-1 , i) / (2.0 * i + 1);
 			pai+= numAtI;
 		}
 		pai *= 4;
