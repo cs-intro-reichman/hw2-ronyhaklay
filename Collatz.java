@@ -2,19 +2,18 @@ public class Collatz {
     public static void main(String[] args) {
         int seed = Integer.parseInt(args[0]);
         String mode = args[1];
-        String step;
 
         for (int i = 1; i <= seed; i++) {
-            int count = 1; 
-            int N = i; 
-            step = "";
+            int N = 1; 
+            int count = i; 
+            String step = "";
             do {
-                N = N % 2 == 0 ? N / 2 : N * 3 +1;
                 step += N + " ";
+                N = (N % 2 == 0) ? N / 2 : N * 3 + 1;
                 count++;
             } 
             while (N != 1);
-            step += N + " (" + count + ")";
+            step += "1 (" + (count + 1) + ")";
             if (mode.equals("v")) {
                 System.out.println(step);
         }
