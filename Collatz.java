@@ -1,37 +1,25 @@
 public class Collatz {
     public static void main(String[] args) {
-        int N = Integer.parseInt(args[0]);
+        int seed = Integer.parseInt(args[0]);
         String mode = args[1];
+        String step;
 
-        if (!mode.equals("v") && !mode.equals("c")) {
-            System.out.println("Mode must be 'v' or 'c'");
-            return;
-        }
-
-        for (int seed = 1; seed <= N; seed++) {
-            int countSteps = 0; 
-            int current = seed; 
-            StringBuilder sequence = new StringBuilder(); 
+        for (int i = 1; i <= seed; i++) {
+            int count = 1; 
+            int N = i; 
+            step = "";
             do {
-                if (sequence.length() == 0) {
-                    sequence.append(current);
-                } else {
-                    sequence.append(" ").append(current);
-                }
-                countSteps++;
-                if (current == 1) {
-                    break;
-                } else if (current % 2 == 0) {
-                    current = current / 2;
-                } else {
-                    current = current * 3 + 1;
-                }
-            } while (true);
+                N = N % 2 == 0 ? N / 2 : N * 3 +1;
+                step += N + " ";
+                count++;
+            } 
+            while (N != 1);
+            step += N + " (" + count + ")";
             if (mode.equals("v")) {
-                System.out.println(sequence + " (" + countSteps + ")");
-            }
+                System.out.println(step);
         }
 
-        System.out.println("Every one of the first " + N + " hailstone sequences reached 1.");
+        System.out.println("Every one of the first " + seed + " hailstone sequences reached 1.");
     }
+}
 }
