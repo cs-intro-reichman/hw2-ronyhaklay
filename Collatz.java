@@ -1,11 +1,6 @@
 public class Collatz {
     public static void main(String[] args) {
-        if (args.length != 2) {
-            System.out.println("Usage: java Collatz N mode");
-            return;
-        }
-
-        int N = Integer.parseInt(args[0]);
+		int N = Integer.parseInt(args[0]);
         String mode = args[1];
 
         if (!mode.equals("v") && !mode.equals("c")) {
@@ -14,7 +9,7 @@ public class Collatz {
         }
 
         for (int seed = 1; seed <= N; seed++) {
-            int steps = 0;
+            int countsteps = 0;
             int current = seed;
             String sequence = "";
 
@@ -24,7 +19,7 @@ public class Collatz {
                 } else {
                     sequence += " " + current;
                 }
-                steps++;
+                countsteps++;
                 if (current == 1) {
                     break;
                 } else if (current % 2 == 0) {
@@ -35,7 +30,7 @@ public class Collatz {
             } while (true);
 
             if (mode.equals("v")) {
-                System.out.println("     " + sequence + " (" + steps + ")");
+                System.out.println("     " + sequence + " (" + countsteps + ")");
             }
         }
 
